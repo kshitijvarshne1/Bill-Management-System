@@ -8,6 +8,7 @@
 package com.example.billmanagementsystem.Controller;
 
 import com.example.billmanagementsystem.Dto.ResponseDto;
+import com.example.billmanagementsystem.Model.Bill;
 import com.example.billmanagementsystem.Model.User;
 import com.example.billmanagementsystem.Service.UABService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,5 +26,11 @@ public class Controller {
         String str= uabService.registerUser(user);
         return new ResponseDto<>(str,HttpStatus.OK);
     }
+    @PostMapping("/addBill")
+    public ResponseDto<String> addBill(@RequestBody Bill bill){
+        String str= uabService.addBill(bill);
+        return new ResponseDto<>(str,HttpStatus.OK);
+    }
+
 }
 

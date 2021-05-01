@@ -7,7 +7,9 @@
 
 package com.example.billmanagementsystem.Service;
 
+import com.example.billmanagementsystem.Model.Bill;
 import com.example.billmanagementsystem.Model.User;
+import com.example.billmanagementsystem.Repository.BillRepository;
 import com.example.billmanagementsystem.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,9 +18,16 @@ import org.springframework.stereotype.Service;
 public class UABService {
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    BillRepository billRepository;
     public String registerUser(User user) {
         userRepository.save(user);
         return "Now registered";
+    }
+
+    public String addBill(Bill bill) {
+        billRepository.save(bill);
+        return "Now bill is added";
     }
 }
 
