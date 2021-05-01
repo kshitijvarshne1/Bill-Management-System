@@ -37,8 +37,9 @@ public class UABService {
         return billRepository.findBillByUserId(userId);
     }
 
-    public String updateBill(int id, String name, int amount, String type, int userId) {
-        billRepository.updateBill(name,amount,type,userId,id);
+
+    public String updateBill(Bill bill) {
+        billRepository.save(bill);
         return "Updated";
     }
 }

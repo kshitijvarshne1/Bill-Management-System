@@ -38,9 +38,10 @@ public class Controller {
     public List<Bill> getBills(@PathVariable int userId) {
         return uabService.getBills(userId);
     }
-    @PutMapping("/updateBill/{id}/{name}/{amount}/{type}/{userId}")
-    public String updateBill(@PathVariable int id, @PathVariable String name, @PathVariable long amount, @PathVariable String type, @PathVariable int userId){
-        return uabService.updateBill(id,name, (int) amount,type,userId);
+
+    @PutMapping("/updateBill")
+    public String updateBill(@RequestBody Bill bill){
+        return uabService.updateBill(bill);
     }
 }
 
