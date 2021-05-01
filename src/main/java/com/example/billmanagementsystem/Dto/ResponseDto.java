@@ -28,5 +28,6 @@ public class ResponseDto<T> {
     public ResponseDto(List<Bill> billList) {
         this.data= (T) billList;
     }
+
 }
 
