@@ -7,8 +7,14 @@
 
 package com.example.billmanagementsystem.Model;
 
-import javax.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+@Getter
+@Setter
+@Entity
 public class Bill {
     @Id
     private int id;
@@ -23,5 +29,9 @@ public class Bill {
         this.type = type;
         this.userId = userId;
     }
+
+    public Bill() {
+    }
+
 }
 
