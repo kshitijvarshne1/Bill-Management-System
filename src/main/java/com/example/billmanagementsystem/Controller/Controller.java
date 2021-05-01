@@ -42,6 +42,5 @@ public class Controller {
     public String updateBill(@PathVariable int id, @PathVariable String name, @PathVariable long amount, @PathVariable String type, @PathVariable int userId){
         return uabService.updateBill(id,name, (int) amount,type,userId);
     }
-
 }
 

@@ -41,6 +41,5 @@ public class UABService {
         billRepository.updateBill(name,amount,type,userId,id);
         return "Updated";
     }
-
 }
 

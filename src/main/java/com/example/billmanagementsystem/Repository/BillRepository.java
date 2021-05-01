@@ -17,4 +17,5 @@ public interface BillRepository extends JpaRepository<Bill,Integer> {
     @Transactional
     @Query(value = "UPDATE bill b SET b.name=:name, b.amount= :amount, b.type=:type,b.user_id=:userid WHERE b.id=:id",nativeQuery = true)
     void updateBill(@Param("name") String name,@Param("amount") long amount ,@Param("type") String type , @Param("userid") int userid,@Param("id") int id);
+
 }
