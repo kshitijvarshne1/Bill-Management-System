@@ -10,16 +10,15 @@ package com.example.billmanagementsystem.Model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 @Getter
 @Setter
 @Entity
 public class Bill {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "id_generator", sequenceName = "id_seq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_generator")
     private int id;
     private String name;
     private long amount;

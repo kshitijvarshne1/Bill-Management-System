@@ -22,7 +22,7 @@ public class User {
     private String name;
     private String email;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
     private String mobile;
 
