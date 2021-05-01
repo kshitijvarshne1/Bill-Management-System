@@ -8,5 +8,15 @@
 package com.example.billmanagementsystem.Model;
 
 public class User {
+    private String name;
+    private String email;
+    private int id;
+    private String mobile;
+
+    public User(String name, String email, String mobile) {
+        this.name = name;
+        this.email = email;
+        this.mobile = mobile;
+    }
 }
 
