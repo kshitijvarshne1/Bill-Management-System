@@ -7,6 +7,18 @@
 
 package com.example.billmanagementsystem.Dto;
 
-public class ResponseDto {
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.http.HttpStatus;
+@Getter
+@Setter
+public class ResponseDto<T> {
+    T data;
+    HttpStatus httpStatus;
+
+    public ResponseDto(T data, HttpStatus httpStatus) {
+        this.data = data;
+        this.httpStatus = httpStatus;
+    }
 }
 
